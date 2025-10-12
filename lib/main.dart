@@ -48,6 +48,7 @@ class MyApp extends StatelessWidget {
             // Assign the GlobalKey
             title: 'HEX Generator',
             theme: yaru.theme,
+            debugShowCheckedModeBanner: false,
             darkTheme: yaru.darkTheme,
             themeMode: ThemeMode.system,
             home: ClipRRect(

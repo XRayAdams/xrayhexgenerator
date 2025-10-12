@@ -17,3 +17,27 @@ A simple yet versatile HEX Generator application built with Flutter for Linux de
 *   **Easy Sharing & Saving:** Copy generated data to the clipboard, share it, or save it to a file.
 
 This project is open source and aims to provide a straightforward tool for developers and users who need to quickly generate various HEX-based data.
+
+## Screenshots
+
+<a href="screenshots/screenshot01.png"><img src="screenshots/ss01.png" alt="Screenshot 1" width="800"/></a>
+<a href="screenshots/screenshot01.png"><img src="screenshots/ss02.png" alt="Screenshot 2" width="800"/></a>
+<a href="screenshots/screenshot01.png"><img src="screenshots/ss03.png" alt="Screenshot 3" width="800"/></a>
+<a href="screenshots/screenshot01.png"><img src="screenshots/ss04.png" alt="Screenshot 4" width="800"/></a>
+
+
+
+## Installation sources
+### From Snap Store
+
+[![xrayhexgenerator](https://snapcraft.io/xrayhexgenerator/badge.svg)](https://snapcraft.io/xrayhexgenerator)
+
+### As .dep package
+
+1. Download the latest `.deb` package from the project's GitHub releases page.
+2. Open a terminal and navigate to the directory where you downloaded the file.
+3. Install the package using the following command:
+
+   ```bash
+   sudo dpkg -i [name-of-the-package].deb
+   ```
