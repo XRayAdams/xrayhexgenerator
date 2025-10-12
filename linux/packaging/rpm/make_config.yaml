@@ -1,0 +1,24 @@
+package_name: xrayhexgenerator
+icon: assets/icon/app.rayadams.xrayhexgenerator.png
+summary: HEX Generator
+group: Application/Development
+vendor: Konstantin Adamov
+packager: Konstantin Adamov
+packagerEmail: xrayadamo@gmail.com
+license: MIT
+url: https://github.com/xrayadams/xrayhexgenerator
+
+display_name: HEX Generator
+
+keywords:
+  - HEX
+  - HEX Generator
+  - Generator
+
+generic_name: HEX Generator
+
+categories:
+  - Tools
+
+startup_notify: false
+metainfo: linux/packaging/appdata.xml

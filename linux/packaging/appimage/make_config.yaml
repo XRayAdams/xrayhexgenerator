@@ -1,0 +1,43 @@
+display_name: HEX Generator
+
+icon: assets/icon/app.rayadams.xrayhexgenerator.png
+
+keywords:
+  - HEX
+  - Generator
+
+generic_name: HEX Generator
+
+# supported mime types that can be opened using this application
+# supported_mime_type:
+#   - audio/mpeg
+
+metainfo: linux/packaging/appdata.xml
+
+actions:
+  - name: Say Hi
+    label: say-hi
+    arguments:
+      - --say
+      - hi
+  - name: Say Bye
+    label: say-bye
+    arguments:
+      - --say
+      - bye
+
+categories:
+  - Development
+
+startup_notify: false
+
+# You can specify the shared libraries that you want to bundle with your app
+#
+# fastforge automatically detects the shared libraries that your app
+# depends on, but you can also specify them manually here.
+# 
+# The following example shows how to bundle the libcurl library with your app.
+#
+# include:
+#   - libcurl.so.4
+include: []

@@ -1,0 +1,37 @@
+display_name: HEX Generator
+package_name: xrayhexgenerator
+
+maintainer:
+  name: Konstantin Adamov
+  email: xrayadamo@gmail.com
+
+priority: optional
+
+section: x11
+
+installed_size: 15700
+
+dependencies:
+
+essential: false
+license: MIT
+url: https://github.com/xrayadams/xrayhexgenerator
+
+icon: assets/icon/app.rayadams.xrayhexgenerator.png
+
+postuninstall_scripts:
+  - echo "Done. :("
+
+keywords:
+  - HEX
+  - HEX generator
+  - generator
+
+generic_name: HEX Generator
+
+categories:
+  - Development
+  - Utility
+
+startup_notify: false
+metainfo: linux/packaging/appdata.xml
