@@ -31,9 +31,13 @@ rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/bin
 mkdir -p %{buildroot}/usr/share/applications
 mkdir -p %{buildroot}/usr/share/icons/hicolor/256x256/apps
+mkdir -p %{buildroot}/opt/%{_name}
 
-# Copy the application binary
-install -m 755 %{_name} %{buildroot}/usr/bin/%{_name}
+# Copy the application files
+cp -r ./* %{buildroot}/opt/%{_name}/
+
+# Create a symlink in /usr/bin
+ln -s /opt/%{_name}/%{_name} %{buildroot}/usr/bin/%{_name}
 
 # Copy the desktop file
 install -m 644 %{SOURCE1} %{buildroot}/usr/share/applications/%{_name}.desktop
@@ -41,14 +45,9 @@ install -m 644 %{SOURCE1} %{buildroot}/usr/share/applications/%{_name}.desktop
 # Copy the application icon
 install -m 644 %{SOURCE2} %{buildroot}/usr/share/icons/hicolor/256x256/apps/%{_name}.png
 
-# Copy the lib and data directories
-cp -r lib %{buildroot}/usr/bin/
-cp -r data %{buildroot}/usr/bin/
-
 %files
 /usr/bin/%{_name}
-/usr/bin/lib
-/usr/bin/data
+/opt/%{_name}
 /usr/share/applications/%{_name}.desktop
 /usr/share/icons/hicolor/256x256/apps/%{_name}.png
 
