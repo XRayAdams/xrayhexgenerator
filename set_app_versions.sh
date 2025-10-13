@@ -5,7 +5,7 @@ PUBSPEC_FILE="pubspec.yaml"
 DEBIAN_YAML_FILE="debian/debian.yaml"
 DEBIAN_DESKTOP_FILE="debian/gui/app.rayadams.xrayhexgenerator.desktop"
 SNAP_YAML_FILE="snap/snapcraft.yaml"
-SNAP_DESKTOP_FILE="snap/gui/app.rayadams.xrayhexgenerator.desktop"
+SNAP_DESKTOP_FILE="snap/gui/xrayhexgenerator.desktop"
 # ---------------------
 
 
