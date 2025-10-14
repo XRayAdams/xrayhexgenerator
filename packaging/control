@@ -1,0 +1,7 @@
+Package: xrayhexgenerator
+Version: 1.0.3+5
+Architecture: amd64
+Priority: optional
+Depends:
+Maintainer: Konstantin Adamov <xrayadamo@gmail.com>
+Description: HEX Generator
