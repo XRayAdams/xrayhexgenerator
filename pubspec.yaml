@@ -4,7 +4,7 @@ description: "Simple HEX Generator for Linux"
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 1.0.3+5
+version: 1.0.3+6
 
 environment:
   sdk: ^3.9.2
@@ -28,7 +28,7 @@ dependencies:
   yaru: ^8.3.0
   package_info_plus: ^9.0.0
   url_launcher: ^6.3.2
-  window_manager: ^0.5.1
+  handy_window: ^0.4.0
 
 dev_dependencies:
   flutter_test:
