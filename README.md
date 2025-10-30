@@ -20,10 +20,10 @@ This project is open source and aims to provide a straightforward tool for devel
 
 ## Screenshots
 
-<a href="screenshots/screenshot01.png"><img src="screenshots/ss01.png" alt="Screenshot 1" width="800"/></a>
-<a href="screenshots/screenshot01.png"><img src="screenshots/ss02.png" alt="Screenshot 2" width="800"/></a>
-<a href="screenshots/screenshot01.png"><img src="screenshots/ss03.png" alt="Screenshot 3" width="800"/></a>
-<a href="screenshots/screenshot01.png"><img src="screenshots/ss04.png" alt="Screenshot 4" width="800"/></a>
+<a href="screenshots/ss01.png"><img src="screenshots/ss01.png" alt="Screenshot 1" width="800"/></a>
+<a href="screenshots/ss02.png"><img src="screenshots/ss02.png" alt="Screenshot 2" width="800"/></a>
+<a href="screenshots/ss03.png"><img src="screenshots/ss03.png" alt="Screenshot 3" width="800"/></a>
+<a href="screenshots/ss04.png"><img src="screenshots/ss04.png" alt="Screenshot 4" width="800"/></a>
 
 
 
