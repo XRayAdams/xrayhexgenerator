@@ -27,8 +27,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController _resultController = TextEditingController();
   final TextEditingController _digitsController = TextEditingController();
-  final TextEditingController _linesController =
-      TextEditingController(); // Added for lines
+  final TextEditingController _linesController = TextEditingController(); // Added for lines
 
   final _digitsNode = FocusNode();
   final _linesNode = FocusNode();
@@ -64,23 +63,17 @@ class _MyHomePageState extends State<MyHomePage> {
               showMenu(
                 context: context,
                 position: RelativeRect.fromLTRB(
-                  offset.dx + renderBox.size.width-190,
-                  offset.dy+50,
+                  offset.dx + renderBox.size.width - 190,
+                  offset.dy + 50,
                   offset.dx + renderBox.size.width,
                   offset.dy,
                 ),
-                items: [
-                  const PopupMenuItem(
-                    value: "about",
-                    child: Text("About..."),
-                  ),
-                ],
+                items: [const PopupMenuItem(value: "about", child: Text("About..."))],
               ).then((value) {
                 if (value == "about") {
-                  showDialog(
-                    context: context,
-                    builder: (context) => const CustomAboutDialog(),
-                  );
+                  if (context.mounted) {
+                    showDialog(context: context, builder: (context) => const CustomAboutDialog());
+                  }
                 }
               });
             },
@@ -103,8 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           children: [
                             const Text("Output mode:"),
                             const SizedBox(width: 10),
-                            if (generator.availableGenerators.isNotEmpty)
-                              ModeSelectorDropDown(generator: generator),
+                            if (generator.availableGenerators.isNotEmpty) ModeSelectorDropDown(generator: generator),
                             Expanded(child: Container()),
                           ],
                         ),
@@ -119,25 +111,19 @@ class _MyHomePageState extends State<MyHomePage> {
                                 Expanded(
                                   child: TextFormField(
                                     enabled: generator.digitsAreEditable,
-                                    decoration: const InputDecoration(
-                                      labelText: 'Digits',
-                                    ),
+                                    decoration: const InputDecoration(labelText: 'Digits'),
                                     keyboardType: TextInputType.number,
                                     controller: _digitsController,
                                     textInputAction: TextInputAction.next,
                                     focusNode: _digitsNode,
                                     onFieldSubmitted: (value) {
-                                      FocusScope.of(
-                                        context,
-                                      ).requestFocus(_linesNode);
+                                      FocusScope.of(context).requestFocus(_linesNode);
                                     },
                                     validator: (value) {
-                                      if (value == null ||
-                                          int.tryParse(value) == null) {
+                                      if (value == null || int.tryParse(value) == null) {
                                         return 'Not a number';
                                       }
-                                      if ((int.tryParse(value) ?? 0) <= 0 &&
-                                          generator.digitsAreEditable) {
+                                      if ((int.tryParse(value) ?? 0) <= 0 && generator.digitsAreEditable) {
                                         return 'Must be > 0';
                                       }
                                       return null;
@@ -152,9 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 const SizedBox(width: 10),
                                 Expanded(
                                   child: TextFormField(
-                                    decoration: const InputDecoration(
-                                      labelText: 'Lines',
-                                    ),
+                                    decoration: const InputDecoration(labelText: 'Lines'),
                                     keyboardType: TextInputType.number,
                                     controller: _linesController,
                                     // Use controller
@@ -163,17 +147,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                     onFieldSubmitted: (value) {
                                       // Potentially trigger generation or move focus
                                       // For now, just request focus on digits if form is valid
-                                      if (_formKey.currentState?.validate() ??
-                                          false) {
+                                      if (_formKey.currentState?.validate() ?? false) {
                                         _formKey.currentState?.save();
-                                        FocusScope.of(
-                                          context,
-                                        ).requestFocus(_digitsNode);
+                                        FocusScope.of(context).requestFocus(_digitsNode);
                                       }
                                     },
                                     validator: (value) {
-                                      if (value == null ||
-                                          int.tryParse(value) == null) {
+                                      if (value == null || int.tryParse(value) == null) {
                                         return 'Not a number';
                                       }
                                       if ((int.tryParse(value) ?? 0) <= 0) {
@@ -208,15 +188,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 8.0),
                       child: TextField(
-                        style: const TextStyle(
-                          fontFamily: 'RobotoMono',
-                          fontSize: 16,
-                        ),
+                        style: const TextStyle(fontFamily: 'UbuntuMono', fontSize: 18),
                         textAlignVertical: TextAlignVertical.top,
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                          alignLabelWithHint: true,
-                        ),
+                        decoration: const InputDecoration(border: OutlineInputBorder(), alignLabelWithHint: true),
                         maxLines: null,
                         readOnly: true,
                         expands: true,
@@ -235,9 +209,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             if (_formKey.currentState!.validate()) {
                               _formKey.currentState!.save();
                               _resultController.text = generator.generate();
-                              setState(
-                                () {},
-                              ); // To update share button state immediately
+                              setState(() {}); // To update share button state immediately
                             }
                           },
                         ),
@@ -248,15 +220,12 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: _resultController.text.isEmpty
                               ? null
                               : () {
-                                  Clipboard.setData(
-                                    ClipboardData(text: _resultController.text),
-                                  );
+                                  Clipboard.setData(ClipboardData(text: _resultController.text));
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
                                       duration: Duration(seconds: 1),
                                       width: 200,
-                                      dismissDirection:
-                                          DismissDirection.horizontal,
+                                      dismissDirection: DismissDirection.horizontal,
                                       content: Text('Copied to clipboard!'),
                                     ),
                                   );
@@ -294,8 +263,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Future<void> saveToFile(HEXGeneratorProvider generator) async {
     var data = Uint8List.fromList(_resultController.text.codeUnits);
 
-    const String fileName =
-        'hexgenerator_output.txt'; // Made filename more specific
+    const String fileName = 'hexgenerator_output.txt'; // Made filename more specific
     final FileSaveLocation? result = await getSaveLocation(
       suggestedName: fileName,
       // initialDirectory: "~/Documents", // Consider making initialDirectory platform-aware or configurable
@@ -304,11 +272,7 @@ class _MyHomePageState extends State<MyHomePage> {
       return;
     }
 
-    final XFile textFile = XFile.fromData(
-      data,
-      mimeType: 'text/plain',
-      name: fileName,
-    );
+    final XFile textFile = XFile.fromData(data, mimeType: 'text/plain', name: fileName);
     await textFile.saveTo(result.path);
   }
 
