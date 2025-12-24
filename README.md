@@ -1,7 +1,7 @@
 # HEX Generator
 
 A simple yet versatile HEX Generator application built with Flutter for Linux desktops.
-
+This project has been closed. New project has been created here [https://github.com/XRayAdams/xrayhexgenerator-rs](https://github.com/XRayAdams/xrayhexgenerator-rs) using Rust anf GTK+ 4
 ## Features
 
 *   **Theme Support:** Adapts to your system's light or dark theme settings for a native look and feel.
